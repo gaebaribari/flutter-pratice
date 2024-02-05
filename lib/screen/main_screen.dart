@@ -43,13 +43,29 @@ class _MainScreenState extends State<MainScreen> {
             alignment: Alignment.center,
             child: Text('홍드로이드'),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.blue),
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.blue,
+            ),
           ),
-          SizedBox(
-            width: 200,
-            height: 200,
-            child: Text('홍드로이드2'),
+          Text(
+            '홍드로이드2',
+            style: TextStyle(
+                color: Colors.lightGreen,
+                fontWeight: FontWeight.bold,
+                fontSize: 30,),
+          ),
+          Row(
+            children: [
+              Image.asset(
+                'assets/love-birds.png',
+                width: 100,
+                height: 100,
+              ),
+              Icon(
+                Icons.access_alarm_outlined,
+                size: 100,
+              )
+            ],
           )
         ],
       ),
