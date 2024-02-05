@@ -14,7 +14,7 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Text('메인화면'),
       ),
-      body: const Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -29,11 +29,28 @@ class _MainScreenState extends State<MainScreen> {
               Text('궁금하다'),
             ],
           ),
-          Row(children: [
-            Expanded(flex:2, child: Text('expanded실험이야')),
-            Expanded(child: Text('이건또뭘까')),
-            Expanded(child: Text('궁금하네')),
-          ],)
+          Row(
+            children: [
+              Expanded(flex: 2, child: Text('expanded실험이야')),
+              Expanded(child: Text('이건또뭘까')),
+              Expanded(child: Text('궁금하네')),
+            ],
+          ),
+          Container(
+            width: 300,
+            height: 100,
+            margin: EdgeInsets.all(32),
+            alignment: Alignment.center,
+            child: Text('홍드로이드'),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.blue),
+          ),
+          SizedBox(
+            width: 200,
+            height: 200,
+            child: Text('홍드로이드2'),
+          )
         ],
       ),
     );
