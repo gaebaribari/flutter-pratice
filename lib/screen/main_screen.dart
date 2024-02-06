@@ -9,6 +9,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List listHello = ['안녕', '반가워', '잘가'];
+  TextEditingController idController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +17,18 @@ class _MainScreenState extends State<MainScreen> {
       appBar: AppBar(
         title: Text('메인화면'),
       ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text('${listHello[index]}'),
-            subtitle: Text('메롱'),
-          );
-        },
-        itemCount: listHello.length,
+      body: Column(
+        children: [
+          TextField(
+            controller: idController,
+            decoration: InputDecoration(
+              labelText: '아이디를 입력해주세요',
+            ),
+          ),
+          ElevatedButton(onPressed: (){
+            print(idController.text.toString());
+          }, child: Text('아이디 입력값 가져오기'),),
+        ],
       ),
     );
   }
