@@ -10,6 +10,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   TextEditingController idController = TextEditingController();
   String message = '이곳에 입력값이 업데이트 됩니다';
+  ValueNotifier<int> counter = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +28,14 @@ class _MainScreenState extends State<MainScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              setState(() {
-                message = idController.text.toString();
-              });
+              counter.value = 30;
             },
             child: Text('아이디 입력값 가져오기'),
           ),
+          ValueListenableBuilder<int>(
+              valueListenable: counter, builder: (context, value, child) {
+          return Text('count $value');
+          }),
           Text(message,
               style: TextStyle(
                 fontSize: 30,
