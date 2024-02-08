@@ -11,6 +11,18 @@ class SubScreen extends StatelessWidget {
         title: Text(
           '서브스크린',
         ),
+        actions: [
+          Icon(Icons.account_tree_outlined),
+          TextButton(onPressed: (){
+            Navigator.pop(context);
+          },
+              child: Text(
+                '뒤로가기',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ))
+        ],
       ),
       body: Column(
         children: [
