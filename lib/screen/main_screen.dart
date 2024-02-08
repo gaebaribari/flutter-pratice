@@ -8,9 +8,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  TextEditingController idController = TextEditingController();
-  String message = '이곳에 입력값이 업데이트 됩니다';
-  ValueNotifier<int> counter = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
@@ -20,26 +17,18 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Column(
         children: [
-          TextField(
-            controller: idController,
-            decoration: InputDecoration(
-              labelText: '아이디를 입력해주세요',
-            ),
-          ),
-          ElevatedButton(
+          TextButton(
             onPressed: () {
-              counter.value = 30;
+              Navigator.pushNamed(
+                context,
+                '/sub',
+                arguments: 'hello',
+              );
             },
-            child: Text('아이디 입력값 가져오기'),
-          ),
-          ValueListenableBuilder<int>(
-              valueListenable: counter, builder: (context, value, child) {
-          return Text('count $value');
-          }),
-          Text(message,
-              style: TextStyle(
-                fontSize: 30,
-              )),
+            child: Text(
+              '클릭하면 서브화면으로 이동',
+            ),
+          )
         ],
       ),
     );
