@@ -8,20 +8,22 @@ class SubScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              '뒤로가기',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            )),
         title: Text(
           '서브스크린',
         ),
         actions: [
           Icon(Icons.account_tree_outlined),
-          TextButton(onPressed: (){
-            Navigator.pop(context);
-          },
-              child: Text(
-                '뒤로가기',
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ))
         ],
       ),
       body: Column(
