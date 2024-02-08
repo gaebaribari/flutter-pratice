@@ -8,7 +8,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +29,44 @@ class _MainScreenState extends State<MainScreen> {
             ),
           )
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+                child: Text(
+              '헤더영역',
+            )),
+            ListTile(
+              title: Text(
+                '홈 화면',
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/');
+              },
+            ),
+            ListTile(
+              title: Text(
+                '메인 화면',
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/main');
+              },
+            ),
+            ListTile(
+              title: Text(
+                '서브 화면',
+              ),
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/sub',
+                  arguments: 'hello',
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
