@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/screen/news_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -27,7 +28,18 @@ class _MainScreenState extends State<MainScreen> {
             child: Text(
               '클릭하면 서브화면으로 이동',
             ),
-          )
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NewsScreen()),
+              );
+            },
+            child: Text(
+              '뉴스를 보고싶다면 여기를 클릭'
+            ),
+          ),
         ],
       ),
       drawer: Drawer(

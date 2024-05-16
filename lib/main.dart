@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/screen/main_screen.dart';
 import 'package:untitled/screen/splash_screen.dart';
 import 'package:untitled/screen/sub_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,12 +23,12 @@ class MyApp extends StatelessWidget {
         '/main': (context) => MainScreen(),
       },
       onGenerateRoute: (settings) {
-if(settings.name == '/sub'){
-  String message = settings.arguments as String;
-  return MaterialPageRoute(builder: (context) {
-return SubScreen(message:message,);
-  },);
-}
+        if(settings.name == '/sub'){
+          String message = settings.arguments as String;
+          return MaterialPageRoute(builder: (context) {
+            return SubScreen(message:message,);
+          },);
+        }
       },
     );
   }
