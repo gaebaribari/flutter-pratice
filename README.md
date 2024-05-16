@@ -56,4 +56,3 @@
 - **UI 요소**: AppBar, Drawer, TabBar, TextField, ListView, ElevatedButton, Image, Icon, Container, SizedBox, Column, Row, Expanded
 - **네트워킹**: 뉴스 API
 
-이 프로젝트를 통해 Flutter의 다양한 기능을 익히고 실습할 수 있습니다.
