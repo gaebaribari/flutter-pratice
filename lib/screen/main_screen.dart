@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/screen/card_stack.dart';
 import 'package:untitled/screen/news_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -37,7 +38,18 @@ class _MainScreenState extends State<MainScreen> {
               );
             },
             child: Text(
-              '뉴스를 보고싶다면 여기를 클릭'
+                '뉴스를 보고싶다면 여기를 클릭'
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CardStack()),
+              );
+            },
+            child: Text(
+                '카드스택 애니메이션을 보세요'
             ),
           ),
         ],
